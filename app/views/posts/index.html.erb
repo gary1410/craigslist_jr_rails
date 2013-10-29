@@ -1,0 +1,11 @@
+<h1>Craigslist Jr Posts</h1>
+
+<% @posts.each do |post| %>
+  <ul>
+    <li><%= post.price %>
+    <li><%= post.title %>
+    <li><%= post.description %>
+      <%= link_to "edit", edit_post_path(post) %>
+      <%= link_to "delete", "/posts/#{post.id}/delete" %>
+  </ul>
+<% end %>
