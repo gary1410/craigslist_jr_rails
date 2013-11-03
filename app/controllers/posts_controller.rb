@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
 
   def index
-    #This renders the form it's the view (GET) and 
+    #This renders the form it's the view (GET) and
     @posts = Post.all
   end
 
-  def new # This will generate the from (POST) - will save to the database
+  def new # This will generate the from (GET) - will save to the database
     @post = Post.new
   end
 
@@ -43,8 +43,7 @@ class PostsController < ApplicationController
   end
 
   def show #Will render all posts in the POST route.
-    @posts = Post.all
-    redirect_to posts_path
+    @post = Post.find(params[:id])
   end
 
 end
